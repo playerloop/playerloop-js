@@ -6,3 +6,6 @@ p.createReport({text: "test"})
 .then(function(data) {
   console.log(data)
 })
+.catch(function(data) {
+  console.error(data)
+})
