@@ -1,0 +1,17 @@
+{
+  "name": "playerloop-sdk",
+  "version": "0.5.0",
+  "description": "The official Playerloop NPM package. Sign up at https://playerloop.io",
+  "main": "index.js",
+  "engines": {
+    "node": ">=16.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Playerloop Team <admin@playerloop.io>",
+  "license": "MIT",
+  "devDependencies": {
+    "dotenv": "^16.0.1"
+  }
+}
