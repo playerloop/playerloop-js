@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://playerloop.io" target="_blank" align="center">
-    <img src="https://avatars.githubusercontent.com/u/97310002?s=200&v=4" width="280">
+    <img src="https://avatars.githubusercontent.com/u/97310002?s=200&v=4" width="100">
   </a>
   <br />
 </p>
