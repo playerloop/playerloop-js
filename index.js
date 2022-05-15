@@ -93,7 +93,7 @@ playerloopSDK.prototype.createReport  = function(options) {
 playerloopSDK.prototype.uploadAttachment  = function(filepath, reportId) {
   const self = this;
   const promise = new Promise((resolve, reject) => {
-    var url = apiURL + "/reports/"+reportId+"/attachment"
+    var url = apiURL + "/reports/"+reportId+"/attachments"
     axios.post(url, {
       //id: filepath,
       file: fs.createReadStream(filepath)
