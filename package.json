@@ -2,22 +2,69 @@
   "name": "playerloop",
   "version": "0.5.0",
   "description": "The official Playerloop NPM package. Sign up at https://playerloop.io",
-  "main": "index.js",
   "engines": {
     "node": ">=16.3.0"
   },
   "scripts": {
-    "test": "mocha"
+    "start": "yarn build-rollup -w",
+    "build": "yarn build-rollup && yarn build-react",
+    "build-rollup": "yarn build:prepare-types && rollup -c",
+    "lint": "eslint src",
+    "build:prepare-types": "rm -rf lib && tsc -b",
+    "prettier": "prettier --write src/**/*",
+    "prepublishOnly": "yarn lint && yarn test && yarn build",
+    "test": "jest src",
+    "test-watch": "jest --watch src",
+    "prepare": "husky install"
   },
+  "main": "dist/module.js",
+  "module": "dist/es.js",
+  "types": "dist/module.d.ts",
+  "files": [
+    "lib/*",
+    "dist/*"
+  ],
   "author": "Playerloop Team <admin@playerloop.io>",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.27.2",
     "form-data": "^4.0.0",
     "tiny-json-http": "^7.4.2"
   },
   "devDependencies": {
-    "dotenv": "^16.0.1",
-    "mocha": "^10.0.0"
+    "@babel/core": "7.18.9",
+    "@babel/plugin-transform-modules-commonjs": "^7.18.6",
+    "@babel/preset-env": "^7.19.3",
+    "@babel/preset-typescript": "^7.18.6",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "@types/jest": "^29.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.30.7",
+    "@typescript-eslint/parser": "^5.30.7",
+    "babel-eslint": "10.1.0",
+    "babel-jest": "^29.1.2",
+    "dotenv": "^16.0.3",
+    "eslint": "8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "jest": "^27.5.1",
+    "lint-staged": "^10.2.11",
+    "node-fetch": "^3.2.10",
+    "prettier": "^2.7.1",
+    "rollup": "^2.77.0",
+    "rollup-plugin-dts": "^4.2.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-jest": "^29.0.3",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.4"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,json}": "prettier --write",
+    "*.js": "eslint src --fix",
+    "*.{ts,tsx}": [
+      "eslint src --fix"
+    ]
   }
 }
