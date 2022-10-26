@@ -1,6 +1,6 @@
 {
-  "name": "playerloop",
-  "version": "0.5.0",
+  "name": "@playerloop/playerloop",
+  "version": "0.9.0",
   "description": "The official Playerloop NPM package. Sign up at https://playerloop.io",
   "engines": {
     "node": ">=16.3.0"
@@ -66,5 +66,13 @@
     "*.{ts,tsx}": [
       "eslint src --fix"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/playerloop/playerloop-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/playerloop/playerloop-js/issues"
+  },
+  "homepage": "https://github.com/playerloop/playerloop-js#readme"
 }
