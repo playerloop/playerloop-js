@@ -15,14 +15,14 @@ export enum ReportType {
 }
 
 export class Playerloop {
-    token: string | null = null
+    secret: string | null = null
     playerId: string | null = null
 
-    init(token: string): void {
-        this.token = token
+    init({ secret }: { secret: string }): void {
+        this.secret = secret
     }
 
-    identify(playerId: string): void {
+    identify({ playerId }: { playerId: string }): void {
         this.playerId = playerId
     }
 
@@ -35,7 +35,7 @@ export class Playerloop {
         const response = await fetch(`${API_URL}/reports/${reportId}/attachments`, {
             method: 'POST',
             headers: {
-                Authorization: `Bearer ${this.token}`,
+                Authorization: `Bearer ${this.secret}`,
                 Accept: '*/*',
             },
             body: formData,
@@ -63,7 +63,7 @@ export class Playerloop {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    Authorization: `Bearer ${this.token}`,
+                    Authorization: `Bearer ${this.secret}`,
                 },
                 body: JSON.stringify({
                     type,
