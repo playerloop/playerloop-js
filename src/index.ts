@@ -7,7 +7,7 @@ global.TextEncoder = TextEncoder
 // @ts-ignore
 global.TextDecoder = TextDecoder
 
-const API_URL = 'http://localhost:1234'
+const API_URL = 'https://api.playerloop.io'
 
 export enum ReportType {
     BUG = 'bug',
