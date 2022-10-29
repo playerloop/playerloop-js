@@ -23,10 +23,10 @@ Then install the NPM package:
 Now you can use Playerloop in your code:
 
 ```javascript
-const PlayerloopSDK = require('./index')
+const PlayerloopSDK = require('playerloop')
 ```
 
-Now you can initate the object as follows. To initiate the object, you will need your Playerloop secret. You can retrieve it in your Settings page at [playerloop.io/settings](https://playerloop.io/settings). Copy it from there and set it up as follows:
+Now you can initate the object as follows. To initiate the object, you will need your Playerloop secret. You can retrieve it in your Settings page of your project at [app.playerloop.io](https://app.playerloop.io/). Copy it from there and set it up as follows:
 
 ```javascript
 const playerloop = new PlayerloopSDK({ secret: "YOUR SECRET HERE" });
